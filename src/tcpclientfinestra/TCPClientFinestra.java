@@ -87,6 +87,9 @@ class ListB implements ActionListener {
         if(s.equals("Converti in maiuscolo")){
             int port=2000;
             String fine="fine";
+            String stringa="maiuscole: on";
+            
+           
         
   try{
         InetAddress serverAddress=InetAddress.getLocalHost();
@@ -96,8 +99,10 @@ class ListB implements ActionListener {
         PrintWriter streamOut=new PrintWriter(new OutputStreamWriter (socket.getOutputStream()),true);
            
            
+           
+            streamOut.println(stringa);
             streamOut.println(testo1.getText());
-            testo2.setText(streamIn.readLine().toUpperCase());
+            testo2.setText(streamIn.readLine());
             
             
             
